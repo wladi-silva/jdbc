@@ -15,13 +15,12 @@ public class EmpregadoDAO {
 
 	public void insert(Empregado empregado) {
 		try {
-			PreparedStatement preparedStatement = conexao.prepareStatement("INSERT INTO EMPREGADO VALUES (?, ?, ?, ?, ?)");
+			PreparedStatement preparedStatement = conexao.prepareStatement("INSERT INTO EMPREGADO (EMPREGADO_NOME, EMPREGADO_EMAIL, SETOR_ID, FILIAL_ID) VALUES (?, ?, ?, ?)");
             
-            preparedStatement.setInt(1, empregado.getEmpregado_id());
-			preparedStatement.setString(2, empregado.getEmpregado_nome());
-			preparedStatement.setString(3, empregado.getEmpregado_email());
-            preparedStatement.setInt(4, empregado.getSetor_id());
-            preparedStatement.setInt(5, empregado.getFilial_id());
+			preparedStatement.setString(1, empregado.getEmpregado_nome());
+			preparedStatement.setString(2, empregado.getEmpregado_email());
+            preparedStatement.setInt(3, empregado.getSetor_id());
+            preparedStatement.setInt(4, empregado.getFilial_id());
 			preparedStatement.executeUpdate();
 
 		} catch (SQLException e) {

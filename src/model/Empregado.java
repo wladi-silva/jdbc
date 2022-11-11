@@ -16,6 +16,13 @@ public class Empregado {
         this.filial_id = filial_id;
     }
 
+    public Empregado(String empregado_nome, String empregado_email, Integer setor_id, Integer filial_id) {
+        this.empregado_nome = empregado_nome;
+        this.empregado_email = empregado_email;
+        this.setor_id = setor_id;
+        this.filial_id = filial_id;
+    }
+
     public Integer getEmpregado_id() {
         return empregado_id;
     }
